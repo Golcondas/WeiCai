@@ -3,7 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiCai", "WeiCai\WeiCai.csproj", "{F8B36FAC-933C-4095-80F2-94247F24104B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_WeiCai.Core", "01_WeiCai.Core", "{8D907402-3040-4176-A138-647581500294}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_WeiCai.Data", "02_WeiCai.Data", "{6961EC12-1BD6-4063-A4B1-59E03FB77D19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_WeiCai.Service", "03_WeiCai.Service", "{44BD5F0C-0BCB-44B4-BDFE-76CBF7AE378B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_WeiCai.Web", "04_WeiCai.Web", "{AF96B469-D3C0-4F5C-B47B-B7277642324E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_WeiCai.ServiceApi", "05_WeiCai.ServiceApi", "{22708451-DEA5-4E98-A61A-54D6AE5A7123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiCai.Core", "WeiCai.Core\WeiCai.Core.csproj", "{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_WeiCai.Dll", "00_WeiCai.Dll", "{BC6202FF-DE0D-409E-B495-0A9FD82F5202}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeiCail.Dll", "WeiCail.Dll", "{8CFB9E72-FD6E-47F3-8EBB-654868261F71}"
+	ProjectSection(SolutionItems) = preProject
+		WeiCail.Dll\ServiceStack.Common.dll = WeiCail.Dll\ServiceStack.Common.dll
+		WeiCail.Dll\ServiceStack.dll = WeiCail.Dll\ServiceStack.dll
+		WeiCail.Dll\ServiceStack.Interfaces.dll = WeiCail.Dll\ServiceStack.Interfaces.dll
+		WeiCail.Dll\ServiceStack.Redis.dll = WeiCail.Dll\ServiceStack.Redis.dll
+		WeiCail.Dll\ServiceStack.ServiceInterface.dll = WeiCail.Dll\ServiceStack.ServiceInterface.dll
+		WeiCail.Dll\ServiceStack.Text.dll = WeiCail.Dll\ServiceStack.Text.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_WeiCai.Test", "06_WeiCai.Test", "{4A264F52-C884-4CB0-9267-FCBFF88753D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiCai.Test", "WeiCai.Test\WeiCai.Test.csproj", "{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +37,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8B36FAC-933C-4095-80F2-94247F24104B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8B36FAC-933C-4095-80F2-94247F24104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8B36FAC-933C-4095-80F2-94247F24104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8B36FAC-933C-4095-80F2-94247F24104B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE} = {8D907402-3040-4176-A138-647581500294}
+		{8CFB9E72-FD6E-47F3-8EBB-654868261F71} = {BC6202FF-DE0D-409E-B495-0A9FD82F5202}
+		{4D9AEED6-CEE8-416C-8E1E-D604CB35E45B} = {4A264F52-C884-4CB0-9267-FCBFF88753D5}
 	EndGlobalSection
 EndGlobal
