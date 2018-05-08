@@ -43,6 +43,8 @@ namespace WeiCai.Test.Neil
             model.UPwd = "123456";
             model.SubTime = DateTime.Now;
             model.DelFlag = 0;
+            model.Email = "123";
+            model.Remark = "";
             var reuslt3 = userDal.AddEntities(model);
         }
     }

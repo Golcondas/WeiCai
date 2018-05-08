@@ -96,8 +96,14 @@ namespace WeiCai.DAL
         //添加
         public bool AddEntities(T model)
         {
-            db.Set<T>().Add(model);
-            //return db.SaveChanges() > 0;
+            try
+            {
+                db.Set<T>().Add(model);
+                //return db.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+            }
             return true;
         }
 
@@ -123,8 +129,8 @@ namespace WeiCai.DAL
             {
                 entry.Property(proName).IsModified = true;
             }
-            //return db.SaveChanges() > 0;
-            return true;
+            return db.SaveChanges() > 0;
+            //return true;
         }
 
         //删除
@@ -132,8 +138,8 @@ namespace WeiCai.DAL
         {
             db.Set<T>().Attach(model);
             db.Set<T>().Remove(model);
-            //return db.SaveChanges() > 0;
-            return true;
+            return db.SaveChanges() > 0;
+            //return true;
         }
     }
 }
