@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\WeiCail.Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\WeiCail.Dll\ServiceStack.dll</HintPath>
     </Reference>
@@ -44,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisHelper.cs" />
   </ItemGroup>
