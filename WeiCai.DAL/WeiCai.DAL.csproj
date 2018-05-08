@@ -57,11 +57,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeiCai.DalAbstratFactory\WeiCai.DalAbstratFactory.csproj">
+      <Project>{49BAF6C4-B2CF-4BDF-9BD7-931A1C64D898}</Project>
+      <Name>WeiCai.DalAbstratFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.Entity\WeiCai.Entity.csproj">
+      <Project>{10078AC5-2B7B-4149-93EC-70CF9F65CB5E}</Project>
+      <Name>WeiCai.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.IDAL\WeiCai.IDAL.csproj">
+      <Project>{263DDE2F-12F3-42C5-BD24-67F74D2E20C6}</Project>
+      <Name>WeiCai.IDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

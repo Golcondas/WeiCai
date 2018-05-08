@@ -77,15 +77,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Neil\UserInfoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RedisHelperTest.cs" />
+    <Compile Include="Neil\RedisHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeiCai.Core\WeiCai.Core.csproj">
       <Project>{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}</Project>
       <Name>WeiCai.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.DAL\WeiCai.DAL.csproj">
+      <Project>{433d8e49-5b35-472e-b6bd-6af4446fdeac}</Project>
+      <Name>WeiCai.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.Entity\WeiCai.Entity.csproj">
+      <Project>{10078ac5-2b7b-4149-93ec-70cf9f65cb5e}</Project>
+      <Name>WeiCai.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.IDAL\WeiCai.IDAL.csproj">
+      <Project>{263DDE2F-12F3-42C5-BD24-67F74D2E20C6}</Project>
+      <Name>WeiCai.IDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
