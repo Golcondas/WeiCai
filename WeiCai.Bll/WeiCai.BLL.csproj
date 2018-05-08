@@ -66,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WeiCai.Core\WeiCai.Core.csproj">
+      <Project>{b804246a-eec5-4716-bff0-c8e14d2ba4ae}</Project>
+      <Name>WeiCai.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeiCai.DalAbstratFactory\WeiCai.DalAbstratFactory.csproj">
       <Project>{49BAF6C4-B2CF-4BDF-9BD7-931A1C64D898}</Project>
       <Name>WeiCai.DalAbstratFactory</Name>

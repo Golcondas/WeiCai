@@ -13,6 +13,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using WeiCai.Core;
 using WeiCai.DalAbstratFactory;
 using WeiCai.Entity;
 
@@ -20,6 +21,7 @@ namespace WeiCai.Bll
 {
     public abstract class BaseService<T> where T : class, new()
     {
+        private static readonly LogHelper log = LogHelper.GetLogger(typeof(T));
         public IDbSession DbSession { get { return new DalAbstratFactory.DbSession(); } }
 
         public abstract void SetCurrentDal();
@@ -32,6 +34,14 @@ namespace WeiCai.Bll
         public static IDAL.IBaseDal<T> GetCurrentDal { get; set; }
 
         public IQueryable<T> LoadEntities(System.Linq.Expressions.Expression<Func<T, bool>> lambdaWehre)
+        {
+            log.DebugFormat("查询: FullName:{0} lambdaWehre:{1}", typeof(T).FullName , lambdaWehre.ToString());
+            var result= LoadEntitie(lambdaWehre);
+            log.Debug("查询结果: " + JsonHelper.ObjectToJson(result));
+            return result;
+        }
+
+        private IQueryable<T> LoadEntitie(System.Linq.Expressions.Expression<Func<T, bool>> lambdaWehre)
         {
             return GetCurrentDal.LoadEntities(lambdaWehre);
         }

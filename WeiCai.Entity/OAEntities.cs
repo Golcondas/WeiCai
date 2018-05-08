@@ -13,28 +13,5 @@ namespace WeiCai.Entity
         }
 
         public virtual DbSet<userinfo> userinfoes { get; set; }
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<userinfo>()
-        //        .Property(e => e.UName)
-        //        .IsUnicode(false);
-
-        //    modelBuilder.Entity<userinfo>()
-        //        .Property(e => e.UPwd)
-        //        .IsUnicode(false);
-
-        //    modelBuilder.Entity<userinfo>()
-        //        .Property(e => e.Remark)
-        //        .IsUnicode(false);
-
-        //    modelBuilder.Entity<userinfo>()
-        //        .Property(e => e.Email)
-        //        .IsUnicode(false);
-
-        //    modelBuilder.Entity<userinfo>()
-        //        .Property(e => e.Sort)
-        //        .IsUnicode(false);
-        //}
     }
 }

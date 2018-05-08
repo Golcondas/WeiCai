@@ -9,7 +9,7 @@ namespace WeiCai.Entity
     [Table("weicai.userinfo")]
     public partial class userinfo
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [StringLength(100)]

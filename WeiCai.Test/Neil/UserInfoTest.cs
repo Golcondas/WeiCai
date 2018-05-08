@@ -32,9 +32,9 @@ namespace WeiCai.Test.Neil
         [TestMethod]
         public void Test_LoadEntities()
         {
-            IUserInfoService service = new UserInfoSerivce();
+            Bll.UserInfoSerivce user = new UserInfoSerivce();
             //查找
-            var result = service.LoadEntities(c => c.ID==1).ToList();
+            var result1 = user.LoadEntities(c => c.ID == 1).ToList();
         }
 
         /// <summary>
