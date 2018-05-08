@@ -99,7 +99,7 @@ namespace WeiCai.DAL
             try
             {
                 db.Set<T>().Add(model);
-                //return db.SaveChanges() > 0;
+                // db.SaveChanges() > 0;
             }
             catch (Exception ex)
             {

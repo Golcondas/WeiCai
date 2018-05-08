@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace WeiCai.Core
 {
-    class JsonHelper
+    public class JsonHelper
     {
         public static string ObjectToJson(object obj)
         {

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeiCai.Core;
 using WeiCai.DAL;
 using WeiCai.Entity;
 
@@ -21,6 +22,7 @@ namespace WeiCai.Test.Neil
     [TestClass]
     public class UserInfoTest
     {
+        private static readonly LogHelper log = LogHelper.GetLogger(typeof(UserInfoTest));
         UserDal userDal = new UserDal();
         /// <summary>
         /// 查找
@@ -29,7 +31,7 @@ namespace WeiCai.Test.Neil
         public void Test_LoadEntities()
         {
             //查找
-            var result = userDal.LoadEntities(c => true).ToList();
+            var result = userDal.LoadEntities(c => c.ID==1).ToList();
         }
 
         /// <summary>
@@ -38,14 +40,19 @@ namespace WeiCai.Test.Neil
         [TestMethod]
         public void Test_AddUser()
         {
-            userinfo model = new userinfo();
-            model.UName = "Web1_Test1";
-            model.UPwd = "123456";
-            model.SubTime = DateTime.Now;
-            model.DelFlag = 0;
-            model.Email = "123";
-            model.Remark = "";
-            var reuslt3 = userDal.AddEntities(model);
+            for (int i = 1; i <=10; i++)
+            {
+                userinfo model = new userinfo();
+                model.UName = "Web1_Test"+i;
+                model.UPwd = "123456";
+                model.SubTime = DateTime.Now;
+                model.DelFlag = 0;
+                model.Email = "123";
+                model.Remark = "";
+                log.Debug(JsonHelper.ObjectToJson(model));
+                var reuslt3 = userDal.AddEntities(model);
+            }
+            
         }
     }
 }
