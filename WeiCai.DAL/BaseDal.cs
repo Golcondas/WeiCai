@@ -99,7 +99,6 @@ namespace WeiCai.DAL
             try
             {
                 db.Set<T>().Add(model);
-                // db.SaveChanges() > 0;
             }
             catch (Exception ex)
             {
@@ -129,8 +128,7 @@ namespace WeiCai.DAL
             {
                 entry.Property(proName).IsModified = true;
             }
-            return db.SaveChanges() > 0;
-            //return true;
+            return true;
         }
 
         //删除
@@ -138,8 +136,7 @@ namespace WeiCai.DAL
         {
             db.Set<T>().Attach(model);
             db.Set<T>().Remove(model);
-            return db.SaveChanges() > 0;
-            //return true;
+            return true;
         }
     }
 }

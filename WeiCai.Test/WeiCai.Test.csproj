@@ -88,6 +88,10 @@
     <Compile Include="Neil\RedisHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WeiCai.Bll\WeiCai.BLL.csproj">
+      <Project>{A54409EF-E823-4283-ADD7-9DFC58392B67}</Project>
+      <Name>WeiCai.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeiCai.Core\WeiCai.Core.csproj">
       <Project>{B804246A-EEC5-4716-BFF0-C8E14D2BA4AE}</Project>
       <Name>WeiCai.Core</Name>
@@ -99,6 +103,10 @@
     <ProjectReference Include="..\WeiCai.Entity\WeiCai.Entity.csproj">
       <Project>{10078ac5-2b7b-4149-93ec-70cf9f65cb5e}</Project>
       <Name>WeiCai.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiCai.IBLL\WeiCai.IBLL.csproj">
+      <Project>{68845BE7-B2A8-4630-81F0-33167D92B556}</Project>
+      <Name>WeiCai.IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeiCai.IDAL\WeiCai.IDAL.csproj">
       <Project>{263DDE2F-12F3-42C5-BD24-67F74D2E20C6}</Project>

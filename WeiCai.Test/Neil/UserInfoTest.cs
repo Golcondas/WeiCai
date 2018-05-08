@@ -13,9 +13,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeiCai.Bll;
 using WeiCai.Core;
 using WeiCai.DAL;
 using WeiCai.Entity;
+using WeiCai.IBLL;
 
 namespace WeiCai.Test.Neil
 {
@@ -23,15 +25,16 @@ namespace WeiCai.Test.Neil
     public class UserInfoTest
     {
         private static readonly LogHelper log = LogHelper.GetLogger(typeof(UserInfoTest));
-        UserDal userDal = new UserDal();
+        private static UserInfoSerivce userInfoService = new UserInfoSerivce();
         /// <summary>
         /// 查找
         /// </summary>
         [TestMethod]
         public void Test_LoadEntities()
         {
+            IUserInfoService service = new UserInfoSerivce();
             //查找
-            var result = userDal.LoadEntities(c => c.ID==1).ToList();
+            var result = service.LoadEntities(c => c.ID==1).ToList();
         }
 
         /// <summary>
@@ -40,19 +43,26 @@ namespace WeiCai.Test.Neil
         [TestMethod]
         public void Test_AddUser()
         {
-            for (int i = 1; i <=10; i++)
+            try
             {
-                userinfo model = new userinfo();
-                model.UName = "Web1_Test"+i;
-                model.UPwd = "123456";
-                model.SubTime = DateTime.Now;
-                model.DelFlag = 0;
-                model.Email = "123";
-                model.Remark = "";
-                log.Debug(JsonHelper.ObjectToJson(model));
-                var reuslt3 = userDal.AddEntities(model);
+                IUserInfoService service = new UserInfoSerivce();
+                for (int i = 1; i <= 10; i++)
+                {
+                    userinfo model = new userinfo();
+                    model.UName = "Web1_Test" + i;
+                    model.UPwd = "123456";
+                    model.SubTime = DateTime.Now;
+                    model.DelFlag = 0;
+                    model.Email = "123";
+                    model.Remark = "";
+                    log.Debug(JsonHelper.ObjectToJson(model));
+                    var reuslt3 = service.AddEntities(model);
+                }
             }
-            
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
         }
     }
 }
