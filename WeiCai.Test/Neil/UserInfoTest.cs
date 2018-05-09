@@ -25,7 +25,6 @@ namespace WeiCai.Test.Neil
     public class UserInfoTest
     {
         private static readonly LogHelper log = LogHelper.GetLogger(typeof(UserInfoTest));
-        private static UserInfoSerivce userInfoService = new UserInfoSerivce();
         /// <summary>
         /// 查找
         /// </summary>
