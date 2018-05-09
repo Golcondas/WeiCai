@@ -33,11 +33,21 @@ namespace WeiCai.Bll
 
         public static IDAL.IBaseDal<T> GetCurrentDal { get; set; }
 
+        #region 查询 LoadEntities
         public IQueryable<T> LoadEntities(System.Linq.Expressions.Expression<Func<T, bool>> lambdaWehre)
         {
+            IQueryable<T> result = null;
             log.DebugFormat("查询: FullName:{0} lambdaWehre:{1}", typeof(T).FullName , lambdaWehre.ToString());
-            var result= LoadEntitie(lambdaWehre);
-            log.Debug("查询结果: " + JsonHelper.ObjectToJson(result));
+            try
+            {
+                result = LoadEntitie(lambdaWehre);
+                log.DebugFormat("查询 FullName:{0} lambdaWehre:{1} linq:{2}", typeof(T).FullName, lambdaWehre.ToString(), result.ToString().Replace("\r\n", ""));
+                log.Debug("查询结果: " + JsonHelper.ObjectToJson(result));
+            }
+            catch (Exception ex)
+            {
+                log.ErrorFormat("查询异常 FullName:{0} lambdaWehre:{1} ex:{2}", typeof(T).FullName, lambdaWehre.ToString(), ex);
+            }
             return result;
         }
 
@@ -45,14 +55,24 @@ namespace WeiCai.Bll
         {
             return GetCurrentDal.LoadEntities(lambdaWehre);
         }
+        #endregion
+
+        #region 分页查询 LoadEntitiesWhere<S>
+        public IQueryable<T> LoadEntitiesWhere<S>(
+            System.Linq.Expressions.Expression<Func<T, bool>> lambdaWhere,
+            System.Linq.Expressions.Expression<Func<T, S>> orderByWhere, bool isAsc, out int totalCount, int pageIndex, int pageSize)
+        {
+            return LoadEntitiesWheres(lambdaWhere, orderByWhere, isAsc, out totalCount, pageIndex, pageSize);
+        }
 
         //按条件查找排序分页
-        public IQueryable<T> LoadEntitiesWhere<S>(
+        private IQueryable<T> LoadEntitiesWheres<S>(
             System.Linq.Expressions.Expression<Func<T, bool>> lambdaWhere,
             System.Linq.Expressions.Expression<Func<T, S>> orderByWhere, bool isAsc, out int totalCount, int pageIndex, int pageSize)
         {
             return GetCurrentDal.LoadEntitiesWhere<S>(lambdaWhere, orderByWhere, isAsc, out totalCount, pageIndex, pageSize);
         }
+        #endregion
 
         public IQueryable<T> GetAllEntity(Expression<Func<T, bool>> condition, int pageIndex, int pageSize, out long total, params OrderModelField[] orderByExpression)
         {
